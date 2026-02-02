@@ -1,0 +1,23 @@
+.feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  background-color: #f2f4f7;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #101828;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.text {
+  white-space: nowrap;
+}

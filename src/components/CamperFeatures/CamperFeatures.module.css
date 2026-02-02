@@ -1,0 +1,25 @@
+.title {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.container {
+  margin-top: 32px;
+  background-color: #f7f7f7;
+  padding: 24px;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featureItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featureValue {
+  text-align: right;
+}

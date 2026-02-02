@@ -1,0 +1,99 @@
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 72px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  text-align: left;
+  background-color: white;
+}
+
+.filters {
+  margin-top: 48px;
+  padding: 24px;
+}
+
+.locationInput {
+  margin-top: 8px;
+  padding: 0px 12px;
+  height: 56px;
+  font-size: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  width: 93%;
+  border: none;
+}
+
+.locationLabel {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.filterSubtitle {
+  padding-bottom: 24px;
+  border-bottom: 2px solid #dadde1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card input {
+  display: none;
+}
+
+.content {
+  height: 80px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.card:hover .content {
+  border-color: #d1d5db;
+}
+
+.card input:checked + .content {
+  border-color: #e2574c;
+  background-color: #fff5f4;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.text {
+  font-weight: 500;
+}
+
+.button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 14px 32px;
+  background-color: #e2574c;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+}
