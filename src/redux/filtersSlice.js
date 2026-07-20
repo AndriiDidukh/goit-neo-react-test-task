@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  location: "", 
-  bodyType: null, 
-  features: [], 
+  location: "",
+  bodyType: null,
+  engine: null,
+  transmission: null,
+  features: [],
 };
 
 const filtersSlice = createSlice({
@@ -13,28 +15,34 @@ const filtersSlice = createSlice({
     setLocation(state, action) {
       state.location = action.payload;
     },
-
     setBodyType(state, action) {
       state.bodyType = action.payload;
     },
-
+    setEngine(state, action) {
+      state.engine = action.payload;
+    },
+    setTransmission(state, action) {
+      state.transmission = action.payload;
+    },
     toggleFeature(state, action) {
       const feature = action.payload;
-
-      if (state.features.includes(feature)) {
-        state.features = state.features.filter((f) => f !== feature);
-      } else {
-        state.features.push(feature);
-      }
+      state.features = state.features.includes(feature)
+        ? state.features.filter((item) => item !== feature)
+        : [...state.features, feature];
     },
-
     resetFilters() {
       return initialState;
     },
   },
 });
 
-export const { setLocation, setBodyType, toggleFeature, resetFilters } =
-  filtersSlice.actions;
+export const {
+  setLocation,
+  setBodyType,
+  setEngine,
+  setTransmission,
+  toggleFeature,
+  resetFilters,
+} = filtersSlice.actions;
 
 export default filtersSlice.reducer;

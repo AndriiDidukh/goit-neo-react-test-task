@@ -1,131 +1,314 @@
 .container {
-  max-width: 1280px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  max-width: 1280px;
   margin: 72px auto;
-  padding: 48px 64px;
+  padding: 0 24px 48px;
+  color: #101828;
   text-align: left;
-  background-color: #ffffff;
 }
 
-.name {
-  font-family: Inter;
-  font-weight: 600;
-  font-style: Semi Bold;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 0%;
-}
-
-.gallery {
-  display: flex;
-  flex-direction: row;
+.topSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1fr;
   gap: 24px;
-  margin-top: 24px;
 }
 
-.image {
-  border-radius: 16px;
-  width: 292px;
-  height: 312px;
+.gallerySection {
+  min-width: 0;
+}
+
+.mainImage {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
-.links {
+.thumbnails {
   display: flex;
-  gap: 32px;
-  margin-top: 32px;
-  border-bottom: 2px solid #dadde1;
-}
-
-.link {
-  font-family: Inter;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
-  text-align: center;
-  text-decoration: none;
-  color: #4b5563;
-}
-
-.active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #e44848;
-  margin-top: 8px;
-}
-
-.price {
-  font-family: Inter;
-  font-weight: 600;
-  font-style: Semi Bold;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 0%;
+  gap: 12px;
   margin-top: 16px;
 }
 
-.divider {
+.thumbnailButton {
+  width: 82px;
+  height: 82px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.selectedThumbnail {
+  border-color: #829b91;
+}
+
+.thumbnail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoCard,
+.vehicleCard,
+.reviewCard {
+  border-radius: 12px;
+  background: #f7f7f7;
+}
+
+.infoCard,
+.vehicleCard {
+  padding: 20px;
+}
+
+.name,
+.sectionTitle,
+.reviewsTitle,
+.booking h2 {
+  margin: 0;
+  color: #101828;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+  color: #101828;
+  font-size: 13px;
+}
+
+.star,
+.reviewStars {
+  color: #ffc531;
+}
+
+.price {
+  margin: 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.description {
+  margin: 0;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.featureList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.feature {
+  padding: 8px 12px;
+  border-radius: 100px;
+  background: #f2f4f7;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.detailsList {
+  margin: 0;
+  font-size: 13px;
+}
+
+.detailsList div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 0;
+  border-top: 1px solid #dadde1;
+}
+
+.detailsList dt,
+.detailsList dd {
+  margin: 0;
+}
+
+.detailsList dd {
+  text-align: right;
+}
+
+.bottomSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) 1fr;
+  gap: 48px;
+  margin-top: 72px;
+}
+
+.reviewsTitle {
+  margin-bottom: 16px;
+}
+
+.reviewList {
+  display: grid;
+  gap: 16px;
+}
+
+.reviewCard {
+  padding: 16px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #829b91;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reviewerName,
+.reviewStars,
+.reviewComment {
+  margin: 0;
+}
+
+.reviewerName {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.reviewStars {
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.reviewStars span {
+  color: #dadde1;
+}
+
+.reviewComment {
+  margin-top: 14px;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .booking {
-  border: 2px solid #e5e7eb;
+  align-self: start;
+  padding: 28px;
+  border: 1px solid #dadde1;
   border-radius: 12px;
-  padding: 24px;
-  margin-left: 32px;
-  margin-top: 32px;
+  background: #ffffff;
+}
+
+.booking p {
+  margin: 8px 0 20px;
+  color: #475467;
+  font-size: 13px;
 }
 
 .contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  gap: 12px;
 }
 
 .contactInput {
-  width: 96%;
-  height: 32px;
-  background-color: #f7f7f7;
-  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 0;
   border-radius: 8px;
-  opacity: 1;
-  padding-left: 16px;
+  outline: 0;
+  background: #f7f7f7;
+  color: #101828;
+  font-size: 14px;
 }
 
-.contactTextarea {
-  width: 94%;
-  height: 60px;
-  padding: 16px;
-  background-color: #f7f7f7;
-  border: none;
-  border-radius: 8px;
-  opacity: 1;
+.contactInput:focus {
+  outline: 1px solid #829b91;
+}
+
+.error {
+  display: block;
+  margin-top: 4px;
+  color: #e44848;
+  font-size: 12px;
 }
 
 .button {
-  align-self: flex-start;
-  padding: 14px 32px;
-  background-color: #e2574c;
-  color: #fff;
-  border: none;
-  border-radius: 999px;
+  width: 100%;
+  height: 52px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 100px;
+  background: #829b91;
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
 }
 
-.error {
-  color: #e2574c;
-  font-size: 12px;
+.button:hover {
+  background: #6d7b75;
 }
 
-.buttonWrapper {
-  display: flex;
-  justify-content: center;
+.notFound {
+  margin: 120px auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .topSection,
+  .bottomSection {
+    grid-template-columns: 1fr;
+  }
+
+  .mainImage {
+    height: 380px;
+  }
+
+  .bottomSection {
+    gap: 32px;
+    margin-top: 48px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 32px auto;
+    padding: 0 16px 32px;
+  }
+
+  .mainImage {
+    height: 280px;
+  }
+
+  .thumbnailButton {
+    width: 64px;
+    height: 64px;
+  }
+
+  .infoCard,
+  .vehicleCard,
+  .booking {
+    padding: 16px;
+  }
 }

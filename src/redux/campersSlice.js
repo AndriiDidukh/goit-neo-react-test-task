@@ -29,23 +29,27 @@ const campersSlice = createSlice({
 });
 
 export const campersReducer = campersSlice.reducer;
+
 export const selectCampers = (state) => state.campers.items;
 export const selectCampersLoading = (state) => state.campers.isLoading;
 export const selectCampersError = (state) => state.campers.error;
+
 export const selectFilteredCampers = (state) => {
   const campers = state.campers.items;
-  const { location, features, bodyType } = state.filters;
+  const { location, features, bodyType, engine, transmission } = state.filters;
 
   return campers.filter((camper) => {
     const matchLocation =
       !location ||
-      camper.location.toLowerCase().includes(location.toLowerCase());
-
-    const matchFeatures =
-      features.length === 0 || features.every((feature) => camper[feature]);
+      camper.location.toLowerCase().includes(location.trim().toLowerCase());
 
     const matchBodyType = !bodyType || camper.form === bodyType;
 
-    return matchLocation && matchFeatures && matchBodyType;
+    const matchEngine = !engine || camper.engine === engine;
+
+    const matchTransmission =
+      !transmission || camper.transmission === transmission;
+
+    return matchLocation && matchBodyType && matchEngine && matchTransmission;
   });
 };
